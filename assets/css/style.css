@@ -1,0 +1,206 @@
+:root{
+    --color-highlight: #e6e6fa;
+    --color-code: #f4f4f4;
+    --color-info-bg: #ffffe0;
+    --color-info-border: #ccccb3;
+    --color-text: #4e5061;
+}
+
+/* ===============================
+    BASE
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Limitar ancho para mejorar legibilidad */
+body, article {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===============================
+    TITULOS
+================================*/
+h2, h3, h4 {
+    color: #1a2440;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* ===============================
+    PARRAFOS Y LISTAS
+================================*/
+p {
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+ul, ol {
+    padding-left: 30px;
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ===============================
+    RESALTADOS
+================================*/
+
+.highlight{
+    background-color: var(--color-highlight);
+    padding: 0 4px;
+    border-radius: 4px;
+}
+.highlight::before{
+    content: "> ";
+    color: #4169E1;
+    font-weight: bold;
+}
+.info{
+    background-color: var(--color-info-bg);
+    border: 1px solid var(--color-info-border);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    color: var(--color-text);
+}
+
+/* ===============================
+    CODIGO
+================================*/
+
+pre {
+    background-color: var(--color-code);
+    color: darkred;
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 18px;
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+}
+
+/* Para code pequeño inline */
+.code-online {
+    font-family: 'Fira Code', monospace;
+    background: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* ===============================
+    ARTICLE
+================================*/
+article {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+section > article{
+    background-color: #f6f6f6;
+    border: 1px gray solid;
+    border-radius: 4px;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid gray;
+    margin-bottom: 10px;
+}
+table caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+thead {
+    background-color: #d3d3d3;
+}
+thead th:nth-child(1) {
+    width: 30%;
+}
+thead th:nth-child(2) {
+    width: 20%;
+}
+thead th:nth-child(3) {
+    width: 15%;
+}
+thead th:nth-child(4) {
+    width: 35%;
+}
+th,td {
+    padding: 20px;
+    border: 1px solid gray;}
+
+
+
+/* ===============================
+    RESPONSIVE
+================================*/
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.35rem; }
+    h4 { font-size: 1.1rem; }
+
+    article {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+
+    pre {
+        font-size: 0.85rem;
+    }
+}

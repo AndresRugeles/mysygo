@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <title>Visualizaciones populares</title>
+</head>
+
+<body>
+
+    <a href="../../index.html">Home</a>
+
+    <h2>Gráfico de Matriz</h2>
+    <!-- Controles de una Matriz -->
+    <h3>Controles de una Matriz</h3>
+    <article>
+        <h4>Subtotales de fila</h4>
+        <p>Permite controlar cómo y cuándo se muestran los subtotales en las filas de la matriz. Es principalmente útil
+            cuando una matriz tiene niveles jerárquicos (por ejemplo: Año → Trimestre → Mes, Categoría → SubCategoría →
+            Producto).</p>
+        <p>Al activar la opción <span class="highlight">Por nivel de fila</span> se puede decidir que nivel de la
+            jerarquía
+            (dimensión) tendrá un subtotal, y luego en la sección de <span class="highlight">Filas</span> se controla la
+            forma en
+            que se mostrará el subtotal del nivel seleccionado.</p>
+        <h4>Columna específica</h4>
+        <p>Permite decidir a qué serie (columna o medida) se quiere aplicar un formato específico, personalizando
+            colores de
+            texto, fondo, alineación y unidades. Se dispone de las siguientes opciones:</p>
+        <ul>
+            <li>Aplicar al encabezado: el formato afecta únicamente al nombre de la columna.</li>
+            <li>Aplicar a los subtotales: el formato afecta a los subtotales relacionados con la serie.</li>
+            <li>Aplicar al total: El formato afecta al valor del total para la columna seleccionada.</li>
+            <li>Aplicar a los valores: el formato aplica a los valores individuales de esa columna.</li>
+        </ul>
+    </article>
+    <!-- Ordenar jerarquía de tiempo en una matriz -->
+    <h3>Cómo ordenar correctamente una jerarquía de tiempo en una matriz de Power BI</h3>
+    <article>
+        <p>Cuando se usa una jerarquía (Año → Trimestre → Mes), Power BI únicamente permite ordenar por una columna al
+            mismo tiempo. Esto puede generar un orden inconsistente entre los niveles, por ejemplo: los meses se ordenan
+            de forma alfabética en lugar de su secuencia real. Con el siguiente procedimiento aprenderá a establecer un
+            orden cronológico consistente utilizando una <strong>medida auxiliar de ordenación</strong>, y como
+            ocultarla para mantener la matriz limpia y profesional.</p>
+        <ol>
+            <li><strong>Crear una medida para soportar la ordenación:</strong> Esta medida toma la fecha máxima del
+                contexto
+                actual (por ejemplo, el día final de cada mes) y la convierte en un número entero, generando un valor
+                continuo que Power BI puede usar para ordenar adecuadamente los niveles de la jerarquía. En el formato
+                de la
+                medida, asignar <span class="code-online">""</span> </li>
+            <div>
+                <pre><code>Ordenar = CONVERT(MAX('Table'[Date]), INTEGER)</code></pre>
+            </div>
+            </li>
+            <li><strong>Configurar el orden en la matriz:</strong>
+                <ul>
+                    <li>Seleccionar la matriz</li>
+                    <li>Abrir la opción de <span class="highlight">Ordenar por</span>, selecciona la medida "Ordenar".
+                    </li>
+                    <li>Elegir orden ascendente o descendente según se requiera</li>
+                </ul>
+            </li>
+            <li><strong>Ocultar encabezado y la flecha de ordenar:</strong>
+                <ul>
+                    <li>En <span class="highlight">Columna específica</span> seleccionar la medida "Ordenar"</li>
+                    <li>Activar únicamente <span class="highlight">Aplicar al encabezado</span></li>
+                    <li>Establecer el mismo color de fondo del encabezado para ocultar visualmente la flecha.</li>
+                    <li>Desde el Mapa de caracteres, buscar la fuente Courier New, seleccionar el caracter Unicode 200C,
+                        copiarlo y pegarlo como nombre del campo dentro de la matriz. Esto permite mostrar un nombre
+                        "invisible" sin afectar la alineación de columnas.</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="info">
+            La medida Dax "Ordenar" debe ser ajustada según el nombre de la tabla y la columna de fecha que se esté
+            utilizando en el modelo de datos.
+        </div>
+    </article>
+
+
+</body>
+
+</html>

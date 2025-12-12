@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos integrados en Python</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<!-- https://www.datacamp.com/es/tutorial/converting-strings-datetime-objects -->
+
+<body>
+    <h1>Módulos integrados en Python</h1>
+    <p>Python viene con una amplia variedad de módulos integrados que proporcionan funcionalidades listas para usar.
+        Estos módulos cubren diversas áreas, desde manipulación de cadenas y archivos hasta operaciones matemáticas y
+        manejo de fechas.</p>
+    <h2>Ejemplos de módulos integrados</h2>
+    <ul>
+        <li><strong>math</strong>: Proporciona funciones matemáticas como sin(), cos(), sqrt(), etc.</li>
+        <li><strong>datetime</strong>: Permite trabajar con fechas y horas.</li>
+        <li><strong>os</strong>: Proporciona una forma de interactuar con el sistema operativo.</li>
+        <li><strong>sys</strong>: Proporciona acceso a variables y funciones relacionadas con el intérprete de Python.
+        </li>
+        <li><strong>json</strong>: Permite trabajar con datos en formato JSON.</li>
+    </ul>
+    <!-- CLASE DATETIME -->
+    <section>
+        <h2>Clase datetime</h2>
+        <p>Para importar el módulo y sus clases, se usa:
+            <code>from datetime import [clase]<code>. Por ejemplo: <code>from datetime import date</code>
+        </p>
+        <!-- Método date -->
+        <article>
+            <table>
+                <caption>Método date</caption>
+                <thead>
+                    <tr>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Crear una variable de tipo fecha</td>
+                        <td><code>fecha_inicio = date(2025,10,31)</code></td>
+                    </tr>
+                    <tr>
+                        <td>Extraer información de una fecha</td>
+                        <td>
+                            <ul>
+                                <li><code>year = fecha_inicio.year</code></li>
+                                <li><code>month = fecha_inicio.month</code></li>
+                                <li><code>weekday = fecha_inicio.weekday()</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Formatear fecha como cadena</td>
+                        <td><code>fecha_str = fecha_inicio.strftime('%Y-%m-%d')</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        <!-- Método time -->
+        <article>
+            <table>
+                <caption>Método time</caption>
+                <thead>
+                    <tr>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Crear una variable de tipo hora</td>
+                        <td><code>hora_inicio = time(14,30,0,500000)</code></td>
+                    </tr>
+                    <tr>
+                        <td>Extraer información de una hora</td>
+                        <td>
+                            <ul>
+                                <li><code>hour = hora_inicio.hour</code></li>
+                                <li><code>minute = hora_inicio.minute</code></li>
+                                <li><code>second = hora_inicio.second</code></li>
+                                <li><code>microsecond = hora_fin.microsecond</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Formatear hora como cadena</td>
+                        <td><code>hora_str = hora_inicio.strftime('%H:%M:%S')</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        <!-- Método datetime -->
+        <article>
+            <table>
+                <caption>Método datetime</caption>
+                <thead>
+                    <tr>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Crear una variable de tipo fecha y hora, por ejemplo: 31 de octubre 2025 a las 14:30</td>
+                        <td><code>dt_inicio = datetime(2025,10,31,14,30,0,500000)</code></td>
+                    </tr>
+                    <tr>
+                        <td>Extraer información de una fecha y hora</td>
+                        <td>
+                            <ul>
+                                <li><code>year = dt_inicio.year</code></li>
+                                <li><code>month = dt_inicio.month</code></li>
+                                <li><code>day = dt_inicio.day</code></li>
+                                <li><code>hour = dt_inicio.hour</code></li>
+                                <li><code>minute = dt_inicio.minute</code></li>
+                                <li><code>second = dt_inicio.second</code></li>
+                                <li><code>microsecond = dt_inicio.microsecond</code></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Formatear fecha y hora como cadena</td>
+                        <td><code>dt_str = dt_inicio.strftime('%Y-%m-%d %H:%M:%S')</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        <!-- Método timedelta -->
+        <table>
+            <caption>Método timedelta</caption>
+            <thead>
+                <tr>
+                    <th>Definición</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Crear una variable de tipo timedelta</td>
+                    <td><code>duration = timedelta(days=5, hours=3, minutes=30)</code></td>
+                </tr>
+                <tr>
+                    <td>Obtener el total de duración de la variable anterior</td>
+                    <td><code>event_duration_sec = duration.total_seconds()</code></td>
+                </tr>
+                <tr>
+                    <td>Operaciones con timedelta</td>
+                    <td>
+                        <ul>
+                            <li><code>nueva_fecha = fecha_inicio + delta</code></li>
+                            <li><code>diferencia = dt_fin - dt_inicio</code></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+
+</html>
